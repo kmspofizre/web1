@@ -63,6 +63,13 @@ function handleFormSubmit(event) {
           }
         )
         .then(function (answer){
+          var res = JSON.parse(answer);
+          alert(res['result']);
+          alert(res['x']);
+          alert(res['y']);
+          alert(res['r']);
+          
+
           // some really good response handler here
         })
       }
@@ -74,6 +81,11 @@ function handleFormSubmit(event) {
   yCoord = null;
   xCoord = null;
   document.getElementById('x').value = "";
+  if (prevElem != null){
+    prevElem.classList.toggle('change_color');
+  }
+  prevElem = null;
+  prevEq = false;
 }
 
 
