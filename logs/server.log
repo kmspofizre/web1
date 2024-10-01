@@ -1,0 +1,17 @@
+[WARN ] 2024-09-30 19:43:34.006 [main] Main - au
+[INFO ] 2024-09-30 19:43:34.015 [main] Main - РџРѕРµС…Р°Р»Рё
+
+[WARN ] 2024-09-30 19:51:39.509 [main] Main - au
+[INFO ] 2024-09-30 19:51:39.515 [main] Main - РџРѕРµС…Р°Р»Рё
+[WARN ] 2024-09-30 19:51:46.478 [main] Main - au
+[INFO ] 2024-09-30 19:51:46.481 [main] Main - Поехали
+[INFO ] 2024-09-30 19:51:46.482 [main] Main - Cannot read field "params" because "com.fastcgi.FCGIInterface.request" is null
+[WARN ] 2024-09-30 19:52:46.575 [main] Main - au
+[INFO ] 2024-09-30 19:52:46.579 [main] Main - Поехали
+[INFO ] 2024-09-30 19:52:46.580 [main] Main - Cannot read field "params" because "com.fastcgi.FCGIInterface.request" is null
+[WARN ] 2024-09-30 19:56:05.706 [main] Main - au
+[INFO ] 2024-09-30 19:56:05.710 [main] Main - Поехали
+[WARN ] 2024-09-30 19:57:53.993 [main] Main - au
+[INFO ] 2024-09-30 19:57:53.996 [main] Main - Поехали
+[WARN ] 2024-10-01 14:47:56.892 [main] Main - au
+[INFO ] 2024-10-01 14:47:56.904 [main] Main - РџРѕРµС…Р°Р»Рё

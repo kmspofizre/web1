@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <title>Лаба 1</title>
+    </head>
+    <body>
+        <div class="main">
+            <header class="header">
+                <div class="container">
+                    <div class="navigation">
+                        Кирилл Игнатов P3219; 414211
+                    </div>
+                </div>
+            </header>
+            <div class="content">
+                <div class="container">
+                  <div class="blocks">
+                    <div class="param-form">
+                        <style>
+                            .hidden {
+                              display:none;
+                            }
+                          </style>
+                        <form action="" method="post" class="pform" id="pform">
+                            <div class="pformins">
+                              <label for="x">Enter X parameter </label><br>
+                              <input type="text" name="x" id="x" required />
+                            </div>
+                            <div class="pformins">
+                              <label for="y">Choose Y parameter</label><br>
+                              <div>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="-5" class="y_button"/>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="-4" class="y_button"/>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="-3" class="y_button"/>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="-2" class="y_button"/>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="-1" class="y_button"/>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="0" class="y_button"/>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="1" class="y_button"/>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="2" class="y_button"/>
+                                <input onclick="yClick(this)" type="button" name="y" id="y_button" value="3" class="y_button"/>
+                              </div>
+                              
+                            </div>
+                            <div class="pformins">
+                                <label for="r">Choose R parameter </label><br>
+                                <div>
+                                    <label><input type="checkbox" name="r" id="r" value="1"/>1</label>
+                                    <label><input type="checkbox" name="r" id="r" value="1.5"/>1.5</label>
+                                    <label><input type="checkbox" name="r" id="r" value="2"/>2</label>
+                                    <label><input type="checkbox" name="r" id="r" value="2.5"/>2.5</label>
+                                    <label><input type="checkbox" name="r" id="r" value="3"/>3</label>
+                                </div>
+                              </div>
+                            <div class="pformins">
+                              <input type="submit" value="Go!" />
+                              <div id="loader" class="hidden">Отправляем...</div>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="result">
+                      <img src="graphic.png"/>
+                    </div>
+                    <div class="for_table">
+                      <table>
+                        <caption>Результаты</caption>
+                        <thead>
+                        <tr>
+                          <th>
+                            X
+                          </th>
+                          <th>
+                            Y
+                          </th>
+                          <th>
+                            R
+                          </th>
+                          <th>
+                            Result
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            1
+                          </td>
+                          <td>
+                            2
+                          </td>
+                          <td>
+                            3
+                          </td>
+                          <td>
+                            OK
+                          </td>
+                        </tr>
+                      </tbody>
+                      </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
