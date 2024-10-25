@@ -16,4 +16,8 @@ public class Check {
     public static boolean checkCircle(float x, int y, float r){
         return (x <= 0) && (y <= 0) && (Math.sqrt(x * x + y * y) <= r / 2);
     }
+
+    public static boolean checkValues(float x, int y, float r){
+        return (-3 <= x) && (x <= 3) && (-5 <= y) && (y <= 3) && (1 <= r) && (r <= 3);
+    }
 }

@@ -3,6 +3,8 @@ let rValue = null;
 let xCoord = null;
 let prevElem = null;
 let prevEq = false;
+let loaded = false;
+let toggleLoaded = false;
 
 
 window.addEventListener('load', function(){
@@ -14,31 +16,45 @@ window.addEventListener('load', function(){
 function handleFormSubmit(event) {
   event.preventDefault();
   let checkCounter = 0;
+  var cont = document.getElementById("loader");
 
   if (yCoord == null){
-    toggleLoader();
+    cont.innerText = "You should choose Y";
+    if (!toggleLoaded){
+      toggleLoader();
+      toggleLoaded = true;
+    }
+    loaded = true;
   }
   else {
+
     var radios = document.getElementsByName('r');
 
     for (var i = 0, length = radios.length; i < length; i++) {
       if (radios[i].checked) {
         rValue = radios[i].value;
         checkCounter += 1;
-
       }
     }
     if (checkCounter != 1){
-      toggleLoader();
+      cont.innerText = "Choose one option for R";
+      if (!toggleLoaded){
+          toggleLoader();
+          toggleLoaded = true;
+      }
+      
+      loaded = true;
     }
     else{
-      alert(checkCounter);
-      alert(rValue);
       xCoord = document.getElementById('x').value;
-      alert(Number(xCoord) <= 3)
       console.log(Number(xCoord))
       if (isNaN(xCoord) || !(-3 <= xCoord && xCoord <= 3)){
-        toggleLoader();
+        cont.innerText = "X should be in -3...3 range";
+        if (!toggleLoaded){
+          toggleLoader();
+          toggleLoaded = true;
+      }
+        loaded = true;
       }
       else {
       
@@ -64,13 +80,32 @@ function handleFormSubmit(event) {
         )
         .then(function (answer){
           var res = JSON.parse(answer);
-          alert(res['result']);
-          alert(res['x']);
-          alert(res['y']);
-          alert(res['r']);
-          
-
-          // some really good response handler here
+          var table = document.getElementById("tres"),
+          tbody = table.getElementsByTagName("tbody")[0];
+          var row = document.createElement("tr");
+          var isHit = document.createElement("td");
+          var x = document.createElement("td");
+          var y = document.createElement("td");
+          var r = document.createElement("td");
+          if (res.result == true){
+            isHit.innerText = "OK";
+          }
+          else {
+            isHit.innerText = "MISS";
+          }
+          x.innerText = res.x;
+          y.innerText = res.y;
+          r.innerText = res.r;
+          row.appendChild(x);
+          row.appendChild(y);
+          row.appendChild(r);
+          row.appendChild(isHit);
+          tbody.appendChild(row);
+          if (toggleLoaded == true){
+            cont.innerText = "";
+            toggleLoader();
+            toggleLoaded = false;
+          }
         })
       }
     }
@@ -81,11 +116,11 @@ function handleFormSubmit(event) {
   yCoord = null;
   xCoord = null;
   document.getElementById('x').value = "";
-  if (prevElem != null){
-    prevElem.classList.toggle('change_color');
-  }
-  prevElem = null;
-  prevEq = false;
+  // if (prevElem != null){
+  //   prevElem.classList.toggle('change_color');
+  // }
+  // prevElem = null;
+  // prevEq = false;
 }
 
 
@@ -103,18 +138,29 @@ function toggleLoader() {
 // }
 
 
-function yClick(clickedElement) {
-  if (prevElem == clickedElement){
-    yCoord = null;
-    prevElem.classList.toggle('change_color');
-    prevEq = true;
-    return;
-  }
-  if (prevElem != null && prevEq != true){
-    prevElem.classList.toggle('change_color');
-  }
-  clickedElement.classList.toggle('change_color');
+// function yClick(clickedElement) {
+//   if (prevElem == clickedElement){
+//     if (yCoord == null){
+//       yCoord = clickedElement.value;
+//     }
+//     else {
+//       yCoord = null;
+//     }
+    
+//     prevElem.classList.toggle('change_color');
+//     prevEq = true;
+//     return;
+//   }
+//   if (prevElem != null && prevEq != true){
+//     prevElem.classList.toggle('change_color');
+//   }
+//   clickedElement.classList.toggle('change_color');
+//   yCoord = clickedElement.value;
+//   prevElem = clickedElement;
+//   prevEq = false;
+//   wait(10);
+// }
+
+function yClick(clickedElement){
   yCoord = clickedElement.value;
-  prevElem = clickedElement;
-  prevEq = false;
 }

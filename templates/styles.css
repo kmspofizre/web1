@@ -70,11 +70,19 @@ body{
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: yellow;
+    background-color: white;
+}
+
+.y_button:hover{
+    background-color: whitesmoke;
+}
+
+.y_button:active{
+    background-color: grey;
 }
 
 .change_color{
-    background-color: red;
+    background-color: grey;
 }
 
 .blocks{
